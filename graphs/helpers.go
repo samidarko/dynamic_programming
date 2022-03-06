@@ -25,14 +25,17 @@ func (q *Queue) Dequeue() (interface{}, error) {
 // Stack data structure
 type Stack []interface{}
 
+// Empty returns true if stack is empty
 func (s *Stack) Empty() bool {
 	return len(*s) == 0
 }
 
+// Push a new element to the stack
 func (s *Stack) Push(element interface{}) {
 	*s = append(*s, element)
 }
 
+// Pop returns and remove the element on top of the stack
 func (s *Stack) Pop() (interface{}, error) {
 	if s.Empty() {
 		return "", fmt.Errorf("empty Stack")
